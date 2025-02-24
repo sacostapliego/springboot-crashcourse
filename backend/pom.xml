@@ -202,21 +202,11 @@
                 <configuration>
                     <from>
                         <image>eclipse-temurin:17</image>
-                        <platforms>
-                            <platform>
-                                <architecture>arm64</architecture>
-                                <os>linux</os>
-                            </platform>
-                            <platform>
-                                <architecture>amd64</architecture>
-                                <os>linux</os>
-                            </platform>
-                        </platforms>
                     </from>
                     <to>
-                        <image>docker.io/${docker.username}/${docker.image.name}:${docker.image.tag}</image>
+                        <image>registry.hub.docker.com/$sacostap/spring-boot-api</image>
                         <tags>
-                            <tag>latest</tag>
+                            <tag>${docker.image.tag}</tag>
                         </tags>
                     </to>
                 </configuration>
