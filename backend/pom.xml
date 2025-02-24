@@ -204,7 +204,7 @@
                         <image>eclipse-temurin:17</image>
                     </from>
                     <to>
-                        <image>registry.hub.docker.com/$sacostap/spring-boot-api</image>
+                        <image>$sacostap/spring-boot-api</image>
                         <tags>
                             <tag>${docker.image.tag}</tag>
                         </tags>
