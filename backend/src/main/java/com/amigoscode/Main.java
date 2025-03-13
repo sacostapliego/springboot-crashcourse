@@ -1,5 +1,9 @@
 package com.amigoscode;
 
+import com.amazonaws.services.lambda.runtime.Context;
+import com.amazonaws.services.lambda.runtime.RequestHandler;
+import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent;
+import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyResponseEvent;
 import com.amigoscode.customer.Customer;
 import com.amigoscode.customer.CustomerRepository;
 import com.amigoscode.customer.Gender;
@@ -67,4 +71,16 @@ public class Main {
         System.out.println(email);
     }
 
+}
+
+public class LambdaHandler implements RequestHandler<APIGatewayProxyRequestEvent, APIGatewayProxyResponseEvent> {
+
+    @Override
+    public APIGatewayProxyResponseEvent handleRequest(APIGatewayProxyRequestEvent request, Context context) {
+        // Your logic here
+        String responseMessage = "Hello from Lambda!";
+        return new APIGatewayProxyResponseEvent()
+                .withStatusCode(200)
+                .withBody(responseMessage);
+    }
 }
