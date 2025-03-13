@@ -1,7 +1,7 @@
 {
   "AWSEBDockerrunVersion": "1",
   "Image": {
-    "Name": "sacostap/spring-boot-api:latest",
+    "Name": "sacostap/spring-boot-api:24.02.2025.23.21.53",
     "Update": "true"
   },
   "Ports": [
