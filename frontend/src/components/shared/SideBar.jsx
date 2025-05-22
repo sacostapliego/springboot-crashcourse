@@ -19,7 +19,8 @@ import {
     useColorModeValue,
     useDisclosure,
     VStack,
-    Image
+    Image,
+    useColorMode
 } from '@chakra-ui/react';
 
 import {
@@ -28,7 +29,9 @@ import {
     FiHome,
     FiMenu,
     FiSettings,
-    FiUsers
+    FiUsers,
+    FiMoon,
+    FiSun
 } from 'react-icons/fi';
 import {useAuth} from "../context/AuthContext.jsx";
 import { customerProfilePictureUrl } from "../../services/client.js";
@@ -134,8 +137,8 @@ const NavItem = ({icon, route, children, ...rest}) => {
 
 const MobileNav = ({onOpen, ...rest}) => {
     const { logOut, customer } = useAuth();
+    const { colorMode, toggleColorMode } = useColorMode();
 
-    console.log("Customer in MobileNav:", customer);
     return (
         <Flex
             ml={{base: 0, md: 60}}
@@ -169,6 +172,13 @@ const MobileNav = ({onOpen, ...rest}) => {
                     variant="ghost"
                     aria-label="open menu"
                     icon={<FiBell/>}
+                />
+                <IconButton
+                    size={"lg"}
+                    variant="ghost"
+                    aria-label="toggle color mode"
+                    onClick={toggleColorMode}
+                    icon={colorMode === 'light' ? <FiMoon/> : <FiSun/>}
                 />
                 <Flex alignItems={'center'}>
                     <Menu>
