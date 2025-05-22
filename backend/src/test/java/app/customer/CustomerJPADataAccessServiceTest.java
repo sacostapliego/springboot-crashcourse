@@ -35,6 +35,7 @@ class CustomerJPADataAccessServiceTest {
 
     @Test
     void selectAllCustomers() {
+        @SuppressWarnings("unchecked")
         Page<Customer> page = mock(Page.class);
         List<Customer> customers = List.of(new Customer());
         when(page.getContent()).thenReturn(customers);
